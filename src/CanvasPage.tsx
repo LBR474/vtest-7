@@ -291,7 +291,7 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
         </Canvas>
       </div>
       <div className="final-content">
-        Let me integrate a Blender 3d model into your React project.
+        Let me integrate a Blender 3D model into your React project.
       </div>
     </div>
   );
