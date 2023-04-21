@@ -9,30 +9,54 @@ function App() {
   const [count, setCount] = useState(0);
   const [showNewContent, setShowNewContent] = useState(false);
 
-   useLayoutEffect(() => {
-     gsap.to(".App", {
-       duration: 4,
-       opacity: 0,
-       onComplete: () => {
-         setShowNewContent(true);
-       },
-     });
-   }, []);
+  useLayoutEffect(() => {
+    gsap.to(".App", {
+      duration: 4,
+      opacity: 0,
+      onComplete: () => {
+        setShowNewContent(true);
+      },
+    });
+  }, []);
 
-   useEffect(() => {
-     if (showNewContent) {
-       gsap.to(".new-content", {
-         opacity: 1,
-         duration: 4,
-       });
-     }
-   }, [showNewContent]);
+  useEffect(() => {
+    if (showNewContent) {
+      gsap.to(".new-content", {
+        opacity: 1,
+        duration: 4,
+
+        onComplete: () => {
+          gsap.to(".page-content", {
+            opacity: 1,
+            duration: 2,
+            onComplete: () => {
+              gsap.to(".new-content", {
+                opacity: 0,
+                duration: 4,
+                
+              });
+
+
+
+
+              
+            },
+          });
+        },
+      });
+
+      gsap.to(".old-content", {
+        opacity: 0,
+        duration: 1,
+      });
+    }
+  }, [showNewContent]);
 
   return (
     <>
       {!showNewContent && (
         <div className="App">
-          <div>
+          <div className="old-content">
             {/* <p className="fontTestPar">Font test</p> */}
             <a href="https://vitejs.dev" target="_blank">
               <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -58,9 +82,14 @@ function App() {
       {showNewContent && (
         <div className="new-content">
           <h1>Get things moving</h1>
+        </div>
+      )}
+      {showNewContent && (
+        <div className="page-content">
           <CanvasPage title={""} loggedIn={false} />
         </div>
       )}
+      
     </>
   );
 }

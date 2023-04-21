@@ -66,7 +66,10 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
         ease: "power2.inOut",
         onComplete: () => {
           setTimeout(() => {
-            //navigate("/tailing");
+            gsap.to('.final-content', {
+              opacity: 1,
+              duration: 3,
+            })
           }, 3000);
         },
       });
@@ -188,7 +191,7 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
             if (z < -500) {
               positions[i + 5] *= 3; // Modify the z-coordinate of each vertex
             }
-            // Otherwise, move the vertex towards positive z
+            // Otherwfnavigateise, move the vertex towards positive z
             else {
               positions[i + 5] += 3000; // Modify the z-coordinate of each vertex
             }
@@ -258,7 +261,7 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
 
     setTimeout(() => {
       Model_down();
-    }, 1000);
+    }, 5000);
   }, []);
 
   const lightRef2 = useRef<THREE.SpotLight>(null);
@@ -286,6 +289,9 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
             </group>
           </Suspense>
         </Canvas>
+      </div>
+      <div className="final-content">
+        Let me integrate a Blender 3d model into your React project.
       </div>
     </div>
   );
