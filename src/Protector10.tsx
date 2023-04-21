@@ -8,6 +8,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
+
 type GLTFResult = GLTF & {
   nodes: {
     Cylinder: THREE.Mesh;
@@ -97,8 +98,10 @@ type GLTFResult = GLTF & {
   };
 };
 
+import shaderString from "./assets/Protector10Assets.glb?url";
+
 export function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/Protector10Public.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF(shaderString) as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <group
@@ -705,4 +708,4 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/Protector10Public.glb");
+useGLTF.preload(shaderString);
