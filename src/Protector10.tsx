@@ -98,7 +98,7 @@ type GLTFResult = GLTF & {
 };
 
 export function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/Protector10.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/Protector10Public.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <group
@@ -705,4 +705,4 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/Protector10.glb");
+useGLTF.preload("/Protector10Public.glb");
