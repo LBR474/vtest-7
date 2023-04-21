@@ -1,7 +1,8 @@
 
 @font-face {
-  font-family: Lato;
-  src: url(./assets/Lato/Lato-Light.ttf);
+  font-family: Lato-Thin;
+  src: url(./assets/Lato/Lato-Thin.ttf);
+  /*  */
 }
 
 
@@ -52,7 +53,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: "Lato";
+  font-family: "Lato-Thin";
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -66,7 +67,7 @@ button:focus-visible {
 }
 
 .fontTestPar {
-  font-family: "Lato";
+  font-family: "Lato-Thin";
   font-size: xx-large;
   color: blue;
 }

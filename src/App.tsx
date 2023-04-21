@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { gsap } from "gsap";
+import CanvasPage from "./CanvasPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,7 +11,7 @@ function App() {
 
    useLayoutEffect(() => {
      gsap.to(".App", {
-       duration: 2,
+       duration: 4,
        opacity: 0,
        onComplete: () => {
          setShowNewContent(true);
@@ -56,8 +57,8 @@ function App() {
       )}
       {showNewContent && (
         <div className="new-content">
-          <h2>New Content</h2>
-          <p>This is the new content that will replace the old content.</p>
+          <h1>Get things moving</h1>
+          <CanvasPage title={""} loggedIn={false} />
         </div>
       )}
     </>
