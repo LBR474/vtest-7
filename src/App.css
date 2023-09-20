@@ -41,7 +41,7 @@
   align-items: center; /* center vertically */
   justify-content: center; /* center horizontally */
   opacity: 0;
-  font-family: "Lato-Thin";
+  font-family: "Lato-Light";
   height: 100vh;
   width: 100vw;
   border: 2px red solid;
