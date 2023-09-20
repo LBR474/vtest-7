@@ -31,13 +31,12 @@ const Tailing = ({
   }, []);
 
   return (
-    
-      
-        <div className="titleDiv">
-          <h1>Let me integrate a Blender 3D model with your react project</h1>
-        </div>
-      
-    
+    <div className="titleDiv">
+      <h1>
+        MC Software Solutions - for all your secure, distributed-application
+        programming needs
+      </h1>
+    </div>
   );
 };
 

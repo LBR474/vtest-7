@@ -291,7 +291,7 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
         </Canvas>
       </div>
       <div className="final-content">
-        MC Software Solutions - for all your secure, distributed-application programming needs
+        MC Software Solutions - for all your secure-software, distributed-application programming needs
       </div>
     </div>
   );
