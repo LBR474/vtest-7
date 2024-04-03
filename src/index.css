@@ -11,18 +11,15 @@
   /*  */
 }
 
-
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 600;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
+
   text-rendering: optimizeLegibility;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -37,21 +34,14 @@ a:hover {
   color: #535bf2;
 }
 
-
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
   background-color: black;
   color: white;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: "Lato-Light";
 }
 
 button {
@@ -73,15 +63,57 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.fontTestPar {
-  font-family: "Lato-Thin";
-  font-size: xx-large;
-  color: blue;
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
+/* Classes */
 
+.CcanvasDiv {
+  opacity: 1;
+  font-family: "Lato-Thin";
+  height: 100vh;
+  width: 100vw;
+}
 
+.new-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+  opacity: 0;
+  font-family: "Lato-thin";
+  font-size: 3.2em;
+  height: 100vh;
+  width: 100vw;
+}
 
+.page-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  font-family: "Lato-Thin";
+  height: 100vh;
+  width: 100vw;
+}
+
+.penultimate-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+  opacity: 0;
+  font-family: "Lato-Thin";
+  font-size: 5.2em;
+  height: 100vh;
+  width: 100vw;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

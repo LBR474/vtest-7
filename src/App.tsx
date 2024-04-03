@@ -33,13 +33,7 @@ function App() {
               gsap.to(".new-content", {
                 opacity: 0,
                 duration: 4,
-                
               });
-
-
-
-
-              
             },
           });
         },
@@ -56,27 +50,8 @@ function App() {
     <>
       {!showNewContent && (
         <div className="App">
-          <div className="old-content">
-            {/* <p className="fontTestPar">Font test</p> */}
-            <a href="https://vitejs.dev" target="_blank">
-              <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://reactjs.org" target="_blank">
-              <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
-          </div>
+          <div className="old-content"></div>
           <h1>MC Software Solutions</h1>
-          {/* <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </button>
-            <p>
-              Edit <code>src/App.tsx</code> and save to test HMR
-            </p>
-          </div>
-          <p className="read-the-docs">
-            Click on the Vite and React logos to learn more
-          </p> */}
         </div>
       )}
       {showNewContent && (
@@ -89,7 +64,6 @@ function App() {
           <CanvasPage title={""} loggedIn={false} />
         </div>
       )}
-      
     </>
   );
 }

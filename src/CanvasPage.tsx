@@ -66,10 +66,17 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
         ease: "power2.inOut",
         onComplete: () => {
           setTimeout(() => {
-            gsap.to('.final-content', {
+            gsap.to(".penultimate-content", {
               opacity: 1,
-              duration: 3,
-            })
+              duration: 1,
+              onComplete: () => {
+                
+                gsap.to(".penultimate-content", {
+                  transform: "translateX(-1000px) rotateX(75deg)",
+                  duration: 1,
+                });
+              },
+            });
           }, 3000);
         },
       });
@@ -92,14 +99,14 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
         //   (child as THREE.Mesh).material = material_3;
         //   await timer(30); // then the created Promise can be awaited
         // }
-         await Promise.all(
-           filteredChildren.map((child) => {
-             return new Promise<void>((resolve) => {
-               (child as THREE.Mesh).material = material_3;
-               resolve();
-             });
-           })
-         );
+        await Promise.all(
+          filteredChildren.map((child) => {
+            return new Promise<void>((resolve) => {
+              (child as THREE.Mesh).material = material_3;
+              resolve();
+            });
+          })
+        );
 
         setTimeout(() => {
           load();
@@ -221,7 +228,7 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
           const child = filteredChildren[i] as THREE.Mesh;
           const materialArray = [material_red, material_black];
 
-             const material = child.material as THREE.MeshStandardMaterial; // set the material to a variable
+          const material = child.material as THREE.MeshStandardMaterial; // set the material to a variable
 
           gsap.fromTo(
             material.color,
@@ -290,8 +297,9 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
           </Suspense>
         </Canvas>
       </div>
-      <div className="final-content">
-        MC Software Solutions - for all your secure-software, distributed-application programming needs
+      <div className="penultimate-content">
+        MC Software Solutions - for all your secure-software,
+        distributed-application programming needs
       </div>
     </div>
   );

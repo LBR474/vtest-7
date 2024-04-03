@@ -26,7 +26,10 @@ const Tailing = ({
       ease: "power2.in",
       opacity: 1,
       delay: 0,
-      
+      onComplete: () => {
+        console.log("Animation complete")
+
+      }
     });
   }, []);
 
