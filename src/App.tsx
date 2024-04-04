@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import CanvasPage from "./CanvasPage";
 
 function App() {
-  const [count, setCount] = useState(0);
+  
   const [showNewContent, setShowNewContent] = useState(false);
 
   useLayoutEffect(() => {
@@ -39,10 +39,6 @@ function App() {
         },
       });
 
-      gsap.to(".old-content", {
-        opacity: 0,
-        duration: 1,
-      });
     }
   }, [showNewContent]);
 
@@ -50,7 +46,7 @@ function App() {
     <>
       {!showNewContent && (
         <div className="App">
-          <div className="old-content"></div>
+         
           <h1>MC Software Solutions</h1>
         </div>
       )}

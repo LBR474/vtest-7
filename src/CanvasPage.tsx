@@ -68,14 +68,19 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
           setTimeout(() => {
             gsap.to(".penultimate-content", {
               opacity: 1,
-              duration: 1,
-              onComplete: () => {
-                
-                gsap.to(".penultimate-content", {
-                  transform: "translateX(-1000px) rotateX(75deg)",
-                  duration: 1,
-                });
-              },
+              duration: 2,
+              // onComplete: () => {
+              //   gsap.to(".penultimate-content", {
+              //     transform: " rotateX(90deg)",
+              //     duration: 1,
+              //     onComplete: () => {
+              //       gsap.to(".penultimate-content", {
+              //         transform: " rotateX(-90deg)",
+              //         duration: 1,
+              //       });
+              //     },
+              //   });
+              // },
             });
           }, 3000);
         },
@@ -93,12 +98,6 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
             child.name.startsWith("tail")
         );
 
-        // for (let i = 0; i < filteredChildren.length; i++) {
-        //   const child = filteredChildren[i];
-
-        //   (child as THREE.Mesh).material = material_3;
-        //   await timer(30); // then the created Promise can be awaited
-        // }
         await Promise.all(
           filteredChildren.map((child) => {
             return new Promise<void>((resolve) => {
@@ -300,6 +299,27 @@ const CanvasPage: React.FC<Props> = ({ title, loggedIn }) => {
       <div className="penultimate-content">
         MC Software Solutions - for all your secure-software,
         distributed-application programming needs
+        <div className="navDiv">
+          <nav>
+            <ul>
+              <li>
+                <a href="#intro">Intro</a>
+              </li>
+              <li>
+                <a href="#work">Work</a>
+              </li>
+              <li>
+                <a href="#simulations">Simulations</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   );
